@@ -1,0 +1,369 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #d8ad21;
+    --light-main-color: #ffd60a;
+    --second-color: #000814;
+    --blue-color: #001d3d;
+    --light-blue-color: #1dd9e2;
+    --olive-leaf: #606c38ff;
+    --black-forest: #283618ff;
+    --cornsilk: #fefae0ff;
+    --sunlit-clay: #dda15eff;
+    --copperwood: #bc6c25ff;
+
+
+
+}
+
+
+body {
+    position: relative;
+}
+
+.main-title h1 {
+    padding-top: 10px;
+    -o-border-radius: 40px;
+    height: 65px;
+    color: var(--copperwood);
+    background-color: var(--black-forest);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    border-radius: 40px;
+}
+
+.navbar {
+    background-color: var(--black-forest);
+
+}
+
+.navbar .navbar-brand .logo {
+    width: 150px;
+
+}
+
+.navbar .navbar-toggler {
+    color: white;
+    font-size: 25px;
+    border-color: white;
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar .navbar-toggler[aria-expanded="true"] {
+    border-color: var(--green-color);
+}
+
+
+
+.navbar .collapse .nav-link {
+    color: var(--cornsilk);
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+
+/* .navbar .navbar-nav .nav-link.active, */
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--sunlit-clay);
+
+}
+
+.landing .hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 76px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.landing .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.landing .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+.landing .hero-content {
+    position: relative;
+    z-index: 3;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.landing .hero-content h1 {
+
+    font-family: "Rubik", serif;
+
+    font-weight: bold;
+    font-size: 9rem;
+    font-style: italic;
+    color: #ffe2268a;
+
+}
+
+
+@media (max-width: 768px) {
+    .landing .hero-content h1 {
+        font-size: 5rem;
+    }
+
+}
+
+@media(max-width: 992px) {
+    .landing .hero-content h1 {
+        font-size: 7rem;
+    }
+}
+
+.Categories {
+    background-color: var(--cornsilk);
+}
+
+.Categories .row .box {
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: var(--black-forest);
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.Categories .row .box::before {
+    content: attr(data-work);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.Categories .row .box:hover {
+    transform: scale(1.03) translateY(-5px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.Categories .row .box:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.Categories .row .box:hover .img-fluid {
+    /* يمكنك جعل الصورة نفسها أغمق عن طريق Filter إذا لم تستخدم غطاء */
+    /* filter: brightness(0.7); */
+}
+
+.Categories .row .box img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    display: block;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.About .row .image {
+    background-color: var(--black-forest);
+    padding: 5px;
+    overflow: hidden;
+    -o-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.About .row .image img {
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    object-fit: cover;
+
+    display: block;
+    -o-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.footer {
+    background-color: var(--olive-leaf);
+
+
+}
+
+.footer .info .copyright>span {
+    color: var(--light-main-color);
+}
+
+.footer .copyright div span {
+    color: red;
+}
+
+.footer .contact ul svg {
+    width: 20px;
+    height: 20px;
+}
+
+.footer .contact ul svg:hover,
+.footer .contact ul svg:focus {
+    display: inline-block;
+    transform-origin: center center;
+    -o-transition: transform 0.5s ease;
+    -o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -ms-transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
+}
+
+.footer .facebook {
+    background-color: #1877f2;
+}
+
+.footer .twitter {
+    background-color: #1da1f2;
+}
+
+.footer .linkedin {
+    background-color: #0077b5;
+}
+
+.footer .youtube {
+    background-color: #ff0000;
+}
+
+.footer .whatsapp {
+    background-color: #3bcd13;
+}
+
+.ShowWork .box {
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-forest);
+    -o-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+
+}
+
+.ShowWork .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    display: block;
+    -o-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.ShowWork .box .text {
+    padding: 5px;
+    color: white
+}
+
+.ShowWork .box .text p {
+    line-height: 3rem;
+    font-size: 1.2rem;
+    ;
+}
+
+.ShowWork .box .text h1 {
+    margin-top: 10px;
+}
+
+/* ==========================================
+   تنسيق اللوجو في جميع الصفحات بدون تعديل HTML
+   ========================================== */
+
+.main-title img {
+    max-width: 100% !important;
+
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transition: width 0.3s ease-in-out;
+}
+
+@media (max-width: 991.98px) {
+    .main-title img {
+        width: 300px !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .main-title img {
+        width: 240px !important;
+    }
+}
+
+@media (max-width: 399.98px) {
+    .main-title img {
+        width: 180px !important;
+    }
+}
